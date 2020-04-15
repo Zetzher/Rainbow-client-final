@@ -35,14 +35,15 @@ class Perfil extends Component {
     return (
       <>
         <Navbar />
-        <div>
-          <h2>Nombre: {this.state.infoUser.nombre}</h2>
-          <h2>Apellido: {this.state.infoUser.apellido}</h2>
-          <h2>Edad: {this.state.infoUser.edad}</h2>
-          <h2>Foto: {this.state.infoUser.photo_url}</h2>
-
+        <div className="profile">
+          <h2 className="info-profile">Foto: <h3 className="subinfo-profile">{this.state.infoUser.photo_url}</h3></h2>
+          <h2 className="info-profile">Nombre: <h3 className="subinfo-profile">{this.state.infoUser.nombre}</h3></h2>
+          <h2 className="info-profile">Apellido: <h3 className="subinfo-profile">{this.state.infoUser.apellido}</h3></h2>
+          <h2 className="info-profile">Edad: <h3 className="subinfo-profile">{this.state.infoUser.edad}</h3></h2>
+        </div>
+        <div className="button-edit-profile">
           <Link to={`/perfil/edit/${this.state.infoUser._id}`}>
-            <button className="navbar-button">Edit Profile</button>
+            <button><h2 className="edit-profile">Editar</h2></button>
           </Link>
         </div>
       </>

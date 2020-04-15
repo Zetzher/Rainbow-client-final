@@ -276,6 +276,36 @@ table {
     font-size: 18px;
 }
 
+.profile {
+    margin-left: 30px;
+    margin-top: 30px;
+}
+
+.info-profile {
+    font-family: 'Fanwood Text', serif;
+    font-size: 25px;
+    line-height: 40px;
+}
+
+.edit-profile {
+    font-family: 'Fanwood Text', serif;
+    font-size: 20px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button-edit-profile {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.subinfo-profile {
+    font-family: 'Fanwood Text', serif;
+    font-size: 20px;
+    display: inline;
+}
+
 .buttontosubmit {
     font-size: 20px;
 }
@@ -295,7 +325,7 @@ table {
 
 .ocio-dbase {
     border: 1px solid black;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
     padding-top: 40px;
     padding-bottom: 40px;
     padding-left: 10px;
@@ -348,6 +378,7 @@ table {
 .ocio-column2 {
     flex-wrap: wrap;
     font-family: 'Fanwood Text', serif;
+    margin-bottom: 120px;
 }
 
 .casita-navbar {

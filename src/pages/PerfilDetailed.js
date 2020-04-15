@@ -81,7 +81,7 @@ class PerfilDetailed extends Component {
 
             <input type="submit" value="Save" className="buttontosubmit" />
           </form>
-          <Link to={`/perfil`}>Back to your profile</Link>
+          <Link to={`/perfil`} style= {{ textDecoration: "none"}}><div className="button-edit-profile"><button><h2 className="edit-profile">Back to your profile</h2></button></div></Link>
         </div>
       </>
     );
