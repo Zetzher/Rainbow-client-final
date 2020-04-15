@@ -8,7 +8,21 @@ class Evento {
         });
     }
 
-    getevento() {
+    pushUser(id) {
+        return this.evento
+        .post(`/eventos/${id}`)
+        .then((data) =>(data))
+        .catch ((err) =>console.log("error from edit evento:", err) )
+    }
+
+    pullUser(id) {
+        return this.evento
+        .post(`/eventos/${id}/delete`)
+        .then((data) =>(data))
+        .catch ((err) =>console.log("error from edit evento:", err) )
+    }
+
+    getEvento() {
         return this.evento
             .get("/eventos")
             .then((data) => (data))
@@ -19,11 +33,9 @@ class Evento {
             .post("/eventos/create", { nombre, descripcion, lugar })
             .then((data) => (data))
             .catch
-
-
     }
+
     editEvento(id, nombre,descripcion,lugar){
-       // console.log("esto es la id",nombre)
         return this.evento
         .put(`eventos/edit/${id}`, {nombre,descripcion,lugar})
         .then((data) =>(data))

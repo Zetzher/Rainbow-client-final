@@ -23,7 +23,7 @@ class EditEvento extends Component {
 
   getInfo = () => {
     evento
-      .getevento()
+      .getEvento()
       .then((listadoocio) => {
         this.setState({ listadoocio: listadoocio.data });
       })

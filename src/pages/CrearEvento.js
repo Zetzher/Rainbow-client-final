@@ -6,18 +6,20 @@ class CrearEvento extends Component {
   state = {
     nombre: "",
     lugar: "",
-    descripcion: ""
+    descripcion: "",
+    listadoEventos: "",
   };
 
   handleChange = (event) => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   };
+
   getInfo = () => {
     eventoservice
-      .getevento()
-      .then((listadoocio) => {
-        this.setState({ listadoocio: listadoocio.data });
+      .getEvento()
+      .then((listadoEventos) => {
+        this.setState({ listadoEventos: listadoEventos.data });
       })
       .catch((err) =>
         console.log("Este error pertenece a pagina ocio.js:", err)

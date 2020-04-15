@@ -87,7 +87,7 @@ class Navbar extends Component {
                 ></img>
                  <h5>Registro</h5>
               </Link>
-              <Link to="/signup" style={{ textDecoration: "none" }}>
+              <Link to="/login" style={{ textDecoration: "none" }}>
                 <img
                   src={loguearse}
                   alt="icono loguearse"

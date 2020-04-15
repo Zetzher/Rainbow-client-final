@@ -49,10 +49,11 @@ class AuthProvider extends React.Component {
 
     auth
       .signup({ email, password })
-      .then((user) => this.setState({ isLoggedin: true, user }))
-      .catch(({ response }) => 
-        this.setState({ message: response.data.statusMessage }) 
-        
+      .then((user) => {
+        this.setState({ isLoggedin: true, user });
+      })
+      .catch(({ response }) =>
+        this.setState({ message: response.data.statusMessage })
       );
   };
 

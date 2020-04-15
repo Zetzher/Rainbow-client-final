@@ -26,11 +26,11 @@ class Signup extends Component {
           <h1>Crea tu cuenta</h1>
 
           <form onSubmit={this.handleFormSubmit} className="alignform">
-            <label>Email:</label>
+            <label>Username:</label>
             <input
               type="text"
               name="email"
-              placeholder="Escribe aquí tu email"
+              placeholder="Escribe aquí tu username"
               className="authinput"
               value={email}
               onChange={this.handleChange}
