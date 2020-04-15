@@ -13,7 +13,8 @@ class Evento extends Component {
       descripcion: "",
       asistentes: [],
       listadoEventos: [],
-      infoUser: this.props.user
+      infoUser: this.props.user,
+      userStatus: false
     };
   }
   
@@ -32,11 +33,16 @@ class Evento extends Component {
       );
   };
 
-  pushIdEvent = (id) => {
+  comprobacion = () => {
+    const mapId = this.state.listadoEventos.map((detalle) => detalle.asistencia.map((datos) => datos._id))
+    mapId.includes(this.state.infoUser._id) ? this.setState({ userStatus : false }) : this.setState({ userStatus : true })
+    
+}
+
+  pushIdEvent =  (id) => {
     const nombre = this.state.infoUser.nombre;
     const edad = this.state.infoUser.edad;
-    evento
-    .pushUser(id, nombre, edad)
+     this.state.userStatus ? evento.pushUser(id, nombre, edad) : alert('¡Ya te has apuntado a este evento!')
 }
 
   pullIdEvent = async (id) => {
@@ -60,6 +66,8 @@ class Evento extends Component {
   componentDidMount() {
     this.getInfo();
   }
+
+  
 
   render() {
 

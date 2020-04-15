@@ -35,6 +35,7 @@ class Perfil extends Component {
     return (
       <>
         <Navbar />
+        <div className='background-profile'>
         <div className="profile">
           <h2 className="info-profile">Foto: <h3 className="subinfo-profile">{this.state.infoUser.photo_url}</h3></h2>
           <h2 className="info-profile">Nombre: <h3 className="subinfo-profile">{this.state.infoUser.nombre}</h3></h2>
@@ -45,6 +46,7 @@ class Perfil extends Component {
           <Link to={`/perfil/edit/${this.state.infoUser._id}`}>
             <button><h2 className="edit-profile">Editar</h2></button>
           </Link>
+        </div>
         </div>
       </>
     );

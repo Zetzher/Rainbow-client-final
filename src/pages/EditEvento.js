@@ -46,7 +46,7 @@ class EditEvento extends Component {
     const id = this.state.info;
     return (
       <div>
-        <form onSubmit={this.handleFormSubmit} className="alignform ">
+        <form onSubmit={this.handleFormSubmit} className="edit-form">
           <h1 className="editevento-title">Edita tu evento</h1>
 
           <label>Nombre de evento:</label>
@@ -54,7 +54,7 @@ class EditEvento extends Component {
             type="text"
             name="nombre"
             placeholder="Nombre del evento"
-            className="authinput"
+            className="auth-input"
             value={nombre}
             onChange={this.handleChange}
           />
@@ -64,7 +64,7 @@ class EditEvento extends Component {
             type="text"
             name="lugar"
             placeholder="Lugar del evento"
-            className="authinput"
+            className="auth-input"
             value={lugar}
             onChange={this.handleChange}
           />

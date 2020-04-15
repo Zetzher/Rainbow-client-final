@@ -25,7 +25,7 @@ class Signup extends Component {
           <Navbar />
           <h1>Crea tu cuenta</h1>
 
-          <form onSubmit={this.handleFormSubmit} className="alignform">
+          <form onSubmit={this.handleFormSubmit} className="align-form">
             <label>Username:</label>
             <input
               type="text"

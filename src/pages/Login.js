@@ -26,7 +26,7 @@ class Login extends Component {
         <div className="authform">
           <h1>Iniciar sesión</h1>
 
-          <form onSubmit={this.handleFormSubmit} className="alignform">
+          <form onSubmit={this.handleFormSubmit} className="align-form">
             <label>Username:</label>
             <input
               type="text"

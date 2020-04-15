@@ -217,8 +217,41 @@ table {
     font-weight: 900;
 }
 
-.authinput {
+.edit-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Fanwood Text', serif;
+        margin-top: 30px;
+        font-size: 25px;
+        background-image: url("./images/favicon.png");
+        background-size: 100vw;
+        background-repeat: no-repeat;
+}
+
+.edit-form label {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Fanwood Text', serif;
+}
+
+.edit-form input {
+    width: 60vw;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Fanwood Text', serif;
+}
+
+.auth-input {
     border-radius: 20px;
+}
+
+.background-profile {
+    
 }
 
 .alignform {
@@ -232,7 +265,16 @@ table {
     background-size: 100%;
 }
 
-.alignform input {
+.align-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Fanwood Text', serif;
+    margin-top: 30px;
+    font-size: 25px;
+}
+
+.align-form input {
     width: 60vw;
     margin: auto;
     margin-bottom: 20px;
@@ -241,7 +283,7 @@ table {
     font-family: 'Fanwood Text', serif;
 }
 
-.alignform label {
+.align-form label {
     margin-bottom: 10px;
     margin-top: 20px;
     font-size: 25px;
