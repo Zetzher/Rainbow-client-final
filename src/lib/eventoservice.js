@@ -37,14 +37,15 @@ class Evento {
 
     editEvento(id, nombre,descripcion,lugar){
         return this.evento
-        .put(`eventos/edit/${id}`, {nombre,descripcion,lugar})
+        .put(`/eventos/edit/${id}`, {nombre,descripcion,lugar})
         .then((data) =>(data))
         .catch ((err) =>console.log("error from edit evento:", err) )
     }
 
     deleteEvento(id) {
-          return this.evento
-            .post(`/eventos/${id}/delete`)
+        console.log('service', id)  
+        return this.evento
+            .delete(`/eventos/${id}/delete`)
             .then((data) => (data))
             .catch((err) => console.log("error from delete evento:", err));
     }
