@@ -23,10 +23,10 @@ class Login extends Component {
     return (
       <section className="auth-background">
         <Navbar />
-        <div className="authform">
+        <div className="registerform">
           <h1>Iniciar sesión</h1>
 
-          <form onSubmit={this.handleFormSubmit} className="align-form">
+          <form onSubmit={this.handleFormSubmit} className="register-form">
             <label>Username:</label>
             <input
               type="text"
@@ -49,8 +49,10 @@ class Login extends Component {
 
             <input type="submit" value="Login" className="buttontosubmit" />
           </form>
-          <span>¿Quieres registrarte?</span>
+          <div className="registerlink">
+          <label>¿Quieres registrarte?</label>
           <Link to={"/signup"}> Signup</Link>
+          </div>
         </div>
       </section>
     );

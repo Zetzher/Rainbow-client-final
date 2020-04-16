@@ -32,8 +32,9 @@ class Auth {
   }
 
   edit({ id, nombre, apellido, edad, photo_url }) {
+    console.log('photo', photo_url)
     return this.auth
-      .put(`/perfil/edit/${id}`, { nombre, apellido, edad, photo_url })
+      .put(`/perfil/edit/${id}`, { nombre, apellido, edad, photo_url: photo_url })
       .then(({ data }) => data);
   }
 

@@ -21,11 +21,11 @@ class Signup extends Component {
     const { email, password } = this.state;
     return (
       <section className="auth-background">
-        <div className="authform">
+        <div className="registerform">
           <Navbar />
           <h1>Crea tu cuenta</h1>
 
-          <form onSubmit={this.handleFormSubmit} className="align-form">
+          <form onSubmit={this.handleFormSubmit} className="register-form">
             <label>Username:</label>
             <input
               type="text"
@@ -48,9 +48,10 @@ class Signup extends Component {
 
             <input type="submit" value="Signup" className="buttontosubmit" />
           </form>
-
-          <span>¿Tienes una cuenta?</span>
+          <div className="registerlink">
+          <label>¿Tienes una cuenta?</label>
           <Link to={"/login"}> Login</Link>
+          </div>
         </div>
       </section>
     );

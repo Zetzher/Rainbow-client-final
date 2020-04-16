@@ -245,35 +245,83 @@ table {
     border-radius: 20px;
 }
 
+
 .background-profile {
     text-align: center;
     margin-top: 40px;
 }
 
-.align-form {
+.perfil-form {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: 'Fanwood Text', serif;
-    margin-top: 30px;
+    margin-top: 80px;
     background-image: url("./images/favicon.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100vw;
 }
 
 
-.align-form input {
+.perfil-form input {
     width: 60vw;
     margin: auto;
     margin-bottom: 20px;
     font-size: 18px;
     text-align: center;
     font-family: 'Fanwood Text', serif;
+    border-radius: 20px;
+}
+
+.perfil-form h1 {
+    margin-bottom: 50px;
+    font-size: 55px;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.perfil-form label {
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 25px;
+    font-weight: 900;
+    font-family: 'Fanwood Text', serif;
+}
+
+.registerform h1 {
+    margin-bottom: 50px;
+    font-size: 55px;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 100px;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Fanwood Text', serif;
+    margin-top: 30px;
 }
 
 
+.register-form input {
+    width: 60vw;
+    margin: auto;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'Fanwood Text', serif;
+    border-radius: 20px;
+}
 
-.align-form label {
+.registerlink {
+    text-align: center;
+}
+
+
+.register-form label {
     margin-bottom: 10px;
     margin-top: 20px;
     font-size: 25px;
@@ -288,9 +336,8 @@ table {
 }
 
 .image_photo_url {
-    width: 60vw;
-    border-radius: 50%;
-    border: 1px black solid;
+  width: 50vw;
+  border-radius: 20px;
 }
 
 .evento-espaciado {

@@ -41,7 +41,7 @@ class CrearEvento extends Component {
       <>
         <Navbar />
         <div>
-          <form onSubmit={this.handleFormSubmit} className="alignform">
+          <form onSubmit={this.handleFormSubmit} className="perfil-form">
             <label>Nombre de evento:</label>
             <input
               type="text"

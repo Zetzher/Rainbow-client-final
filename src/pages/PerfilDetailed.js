@@ -12,23 +12,26 @@ class PerfilDetailed extends Component {
       nombre: "",
       apellido: "",
       edad: "",
-      photo_url: "",
+      photo_url: ""
     };
   }
   handleFormSubmit = async (event) => {
     event.preventDefault();
     const { nombre, apellido, edad, photo_url } = this.state;
+    console.log('foto:', this.state)
     const id = this.state.infoUser._id;
-    auth.edit({ id, nombre, apellido, edad, photo_url });
-    await this.getUserInfo();
-    this.props.history.push("/perfil");
+    await auth.edit({ id, nombre, apellido, edad, photo_url })
+    this.setState({infoChange: true})
+    //this.getUserInfo();
+    //this.props.history.push("/perfil");
   };
 
   getUserInfo = () => {
     auth
       .perfil()
       .then((user) => {
-        this.setState({ infoUser: user });
+       this.setState({ infoUser: user });
+        console.log(this.state)
       })
       .catch((err) => console.log(err));
   };
@@ -42,8 +45,10 @@ class PerfilDetailed extends Component {
   const uploadData = new FormData();
   uploadData.append("photo_url", event.target.files[0]);
   const fileName = event.target.files[0].name
+  
   auth.handleUpload(uploadData)
-  .then(response => {console.log(response.photo_url); this.setState({photo_url: response.photo_url, fileName: fileName});
+  .then(response =>{
+   this.setState({photo_url: response.photo_url, fileName: fileName})
   })
   .catch(err => {console.log("Error while uploading the file: ", err)});
   } 
@@ -60,7 +65,7 @@ class PerfilDetailed extends Component {
       <>
         <Navbar />
         <div>
-          <form onSubmit={this.handleFormSubmit} encType="multipart/form-data" className="align-form">
+          <form onSubmit={this.handleFormSubmit}  className="perfil-form">
             <label>Nombre:</label>
             <input
               type="text"
@@ -95,13 +100,15 @@ class PerfilDetailed extends Component {
             <input
               type="file"
               name="photo_url"
-              className="auth-input"
+              className="image_photo_url"
               onChange={(e) => this.handleFileUpload(e)}
             />
-
-            <input type="submit" value="Save" className="buttontosubmit" />
+{ 
+  this.state.infoChange ? <Link to="/perfil"><p>Vuelve a tu perfil</p></Link> :  <input type="submit" value="Save" className="buttontosubmit" />
+}
+           
           </form>
-          <Link to={`/perfil`} style= {{ textDecoration: "none"}}><div className="button-edit-profile"><button><h2 className="edit-profile">Back to your profile</h2></button></div></Link>
+          
         </div>
       </>
     );
