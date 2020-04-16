@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import evento from "../lib/eventoservice";
+import getEventMethod from "../lib/eventoservice";
 import { withAuth } from "../lib/AuthProvider";
 
 class Evento extends Component {
@@ -14,14 +14,15 @@ class Evento extends Component {
       asistentes: [],
       listadoEventos: [],
       infoUser: this.props.user,
-      userStatus: false
+      userStatus: false,
+      
     };
   }
   
 
   getInfo = () => {
     
-    evento
+    getEventMethod
       .getEvento()
       .then((listadoEventos) => {
         this.setState({ 
@@ -33,22 +34,30 @@ class Evento extends Component {
       );
   };
 
-  comprobacion = () => {
-    const mapId = this.state.listadoEventos.map((detalle) => detalle.asistencia.map((datos) => datos._id))
-    mapId.includes(this.state.infoUser._id) ? this.setState({ userStatus : false }) : this.setState({ userStatus : true })
-    
-}
+  
 
-  pushIdEvent =  (id) => {
+  pushIdEvent =  (event) => {
     const nombre = this.state.infoUser.nombre;
     const edad = this.state.infoUser.edad;
-     this.state.userStatus ? evento.pushUser(id, nombre, edad) : alert('¡Ya te has apuntado a este evento!')
+    const id = event._id
+    const participantes = event.asistencia
+    const filtrados = participantes.filter((datos) => {
+    return datos._id == this.state.infoUser._id
+  })
+
+  console.log('filtrados', filtrados)
+    if(filtrados.length == 0){
+      getEventMethod.pushUser(id, nombre, edad)
+    } else {
+      alert("Ya estás apuntado")
+    }
+    
 }
 
   pullIdEvent = async (id) => {
   const nombre = this.state.infoUser.nombre;
   const edad = this.state.infoUser.edad;
-  evento
+  getEventMethod
   .pullUser(id, nombre, edad)
 }
   
@@ -60,7 +69,7 @@ class Evento extends Component {
     this.setState({
       listadoEventos: updatedList,
     });
-    evento.deleteEvento(id);
+    getEventMethod.deleteEvento(id);
   };
 
   componentDidMount() {
@@ -91,7 +100,7 @@ class Evento extends Component {
     }</p>
           <br></br>
           <div className='posicion-botones-evento'>
-          <button className='estilo-botones-evento' onClick={(e) => this.pushIdEvent(detalle._id)}>Participar en el evento</button>
+          <button className='estilo-botones-evento' onClick={(e) => this.pushIdEvent(detalle)}>Participar en el evento</button>
           <button className='estilo-botones-evento' onClick={(e) => this.pullIdEvent(detalle._id)}>Desapuntarse</button>
           </div>
         </div>

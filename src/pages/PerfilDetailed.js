@@ -38,23 +38,35 @@ class PerfilDetailed extends Component {
     this.setState({ [name]: value });
   };
 
+  handleFileUpload = (event) => {
+  const uploadData = new FormData();
+  uploadData.append("photo_url", event.target.files[0]);
+  const fileName = event.target.files[0].name
+  auth.handleUpload(uploadData)
+  .then(response => {console.log(response.photo_url); this.setState({photo_url: response.photo_url, fileName: fileName});
+  })
+  .catch(err => {console.log("Error while uploading the file: ", err)});
+  } 
+  
+
+
   componentDidMount() {
-    this.getUserInfo();
+    this.getUserInfo()
   }
 
   render() {
-    const { nombre, apellido, edad } = this.state;
+    const { nombre, apellido, edad, photo_url } = this.state;
     return (
       <>
         <Navbar />
         <div>
-          <form onSubmit={this.handleFormSubmit} className="alignform">
+          <form onSubmit={this.handleFormSubmit} encType="multipart/form-data" className="align-form">
             <label>Nombre:</label>
             <input
               type="text"
               name="nombre"
               placeholder={this.state.infoUser.nombre}
-              className="authinput"
+              className="auth-input"
               value={nombre}
               onChange={this.handleChange}
             />
@@ -64,7 +76,7 @@ class PerfilDetailed extends Component {
               type="text"
               name="apellido"
               placeholder={this.state.infoUser.apellido}
-              className="authinput"
+              className="auth-input"
               value={apellido}
               onChange={this.handleChange}
             />
@@ -74,9 +86,17 @@ class PerfilDetailed extends Component {
               type="number"
               name="edad"
               placeholder={this.state.infoUser.edad}
-              className="authinput"
+              className="auth-input"
               value={edad}
               onChange={this.handleChange}
+            />
+
+            <label>Foto:</label>
+            <input
+              type="file"
+              name="photo_url"
+              className="auth-input"
+              onChange={(e) => this.handleFileUpload(e)}
             />
 
             <input type="submit" value="Save" className="buttontosubmit" />

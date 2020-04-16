@@ -37,7 +37,7 @@ class Perfil extends Component {
         <Navbar />
         <div className='background-profile'>
         <div className="profile">
-          <h2 className="info-profile">Foto: <h3 className="subinfo-profile">{this.state.infoUser.photo_url}</h3></h2>
+          <h3 className="info-profile"><img src={this.state.infoUser.photo_url} className="image_photo_url"></img></h3>
           <h2 className="info-profile">Nombre: <h3 className="subinfo-profile">{this.state.infoUser.nombre}</h3></h2>
           <h2 className="info-profile">Apellido: <h3 className="subinfo-profile">{this.state.infoUser.apellido}</h3></h2>
           <h2 className="info-profile">Edad: <h3 className="subinfo-profile">{this.state.infoUser.edad}</h3></h2>

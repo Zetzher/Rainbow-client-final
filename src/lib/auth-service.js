@@ -37,6 +37,12 @@ class Auth {
       .then(({ data }) => data);
   }
 
+  handleUpload( thefile ) {
+    return this.auth
+    .post('/perfil/upload', thefile)
+    .then ( res => res.data )
+    .catch (err => console.log(err))
+  }
   
 }
 
