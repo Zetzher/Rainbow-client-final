@@ -31,6 +31,10 @@ class Auth {
     return this.auth.get("/perfil").then(({ data }) => data);
   }
 
+  perfilStranger(id) {
+    return this.auth.get(`/perfil/${id}`).then(({data}) => data)
+  }
+
   edit({ id, nombre, apellido, edad, photo_url }) {
     console.log('photo', photo_url)
     return this.auth

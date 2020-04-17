@@ -18,12 +18,9 @@ class PerfilDetailed extends Component {
   handleFormSubmit = async (event) => {
     event.preventDefault();
     const { nombre, apellido, edad, photo_url } = this.state;
-    console.log('foto:', this.state)
     const id = this.state.infoUser._id;
     await auth.edit({ id, nombre, apellido, edad, photo_url })
     this.setState({infoChange: true})
-    //this.getUserInfo();
-    //this.props.history.push("/perfil");
   };
 
   getUserInfo = () => {
@@ -31,7 +28,6 @@ class PerfilDetailed extends Component {
       .perfil()
       .then((user) => {
        this.setState({ infoUser: user });
-        console.log(this.state)
       })
       .catch((err) => console.log(err));
   };
@@ -104,7 +100,7 @@ class PerfilDetailed extends Component {
               onChange={(e) => this.handleFileUpload(e)}
             />
 { 
-  this.state.infoChange ? <Link to="/perfil"><p>Vuelve a tu perfil</p></Link> :  <input type="submit" value="Save" className="buttontosubmit" />
+  this.state.infoChange ? <Link to="/perfil" style={{ textDecoration: "none" }}><p className="buttontoprofile">Vuelve a tu perfil</p></Link> :  <input type="submit" value="Save" className="buttontosubmit" />
 }
            
           </form>

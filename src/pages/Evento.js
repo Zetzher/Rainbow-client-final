@@ -117,8 +117,7 @@ class Evento extends Component {
             </button>
           </div>
           <p>
-            Nombre del participante: {detalle.asistencia.map((datos) => <div>{datos.nombre}, {datos.edad}</div>)}
-            
+            Nombre del participante: {detalle.asistencia.map((datos) => <Link to={`perfil/${datos._id}`}><div>{datos.nombre}, {datos.edad}</div></Link>)}
           </p>
           <br></br>
           <div className="posicion-botones-evento">

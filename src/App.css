@@ -335,6 +335,16 @@ table {
     margin-bottom: 20px;
 }
 
+.buttontoprofile {
+    color: black;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .image_photo_url {
   width: 50vw;
   border-radius: 20px;

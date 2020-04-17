@@ -12,7 +12,8 @@ import Signup from "./pages/Signup";
 import Ocio from "./pages/Ocio";
 import PerfilDetailed from "./pages/PerfilDetailed";
 import EventoCreate from "./pages/CrearEvento";
-import EditEvento from "./pages/EditEvento"
+import EditEvento from "./pages/EditEvento";
+import PerfilStrangerDetailed from "./pages/PerfilStrangerDetailed";
 
 class App extends Component {
     render() {
@@ -25,6 +26,7 @@ class App extends Component {
                 <Route exact path='/ocio' component={Ocio} />
                 <PrivateRoute exact path='/perfil' component={Perfil} />
                 <PrivateRoute exact path='/perfil/edit/:id' component={PerfilDetailed} />
+                <PrivateRoute exact path='/perfil/:id' component={PerfilStrangerDetailed} />
                 <PrivateRoute exact path='/evento' component={Evento} />
                 <PrivateRoute exact path='/evento/edit/:id' component={EditEvento} />
                 <PrivateRoute exact path='/evento/create' component={EventoCreate} />
