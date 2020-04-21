@@ -43,9 +43,9 @@ class Evento extends Component {
     const participantes = event.asistencia;
     const updatedAsistentes = [...this.state.asistentesMostrar];
     const filtrados = participantes.filter((datos) => {
-      return datos._id == this.state.infoUser._id;
+      return datos._id === this.state.infoUser._id;
     });
-    if (filtrados.length == 0) {
+    if (filtrados.length === 0) {
       participantes.push(this.props.user)
       getEventMethod.pushUser(id, nombre, edad);
        
@@ -58,7 +58,6 @@ class Evento extends Component {
       alert("Ya estás apuntado");
     }
     
-    console.log("estos son los asistentes", this.state.asistentes);
   };
 
   pullIdEvent = (event) => {
@@ -70,9 +69,9 @@ class Evento extends Component {
       return datos._id !== this.props.user._id
     })
     const filtrados = participantes.filter((datos) => {
-      return datos._id == this.state.infoUser._id;
+      return datos._id === this.state.infoUser._id;
     });
-    if (filtrados.length == 1){
+    if (filtrados.length === 1){
     participantes.splice(participantes.indexOf(this.props.user._id), 1)
     this.setState({
       asistentesMostrar: updatedAsistentes
@@ -82,7 +81,6 @@ class Evento extends Component {
   };
 
   deleteElement = async (id) => {
-    console.log('delete evento')
     const updatedList = [...this.state.listadoEventos].filter((element) => {
       return element._id !== id;
     });
@@ -98,6 +96,18 @@ class Evento extends Component {
 
   render() {
     const allOcio = this.state.listadoEventos.map((detalle) => {
+      let buttonEdit;
+      let deleteButton;
+      if(detalle.id[0] === this.props.user._id){
+         buttonEdit = <Link to={`/evento/edit/${detalle._id}`}>
+              <button className="estilo-botones-evento">Editar evento</button>
+            </Link>
+            deleteButton = <button className="estilo-botones-evento" onClick={(e) => this.deleteElement(detalle._id)}>
+            Borrar evento
+          </button>
+      }
+
+
       return (
         <div key={detalle._id} className="info-evento">
           <p>Nombre del evento: {detalle.nombre}</p>
@@ -106,15 +116,8 @@ class Evento extends Component {
             Descripción: {detalle.descripcion}
           </p>
           <div className="posicion-botones-evento">
-            <Link to={`/evento/edit/${detalle._id}`}>
-              <button className="estilo-botones-evento">Editar evento</button>
-            </Link>
-            <button
-              className="estilo-botones-evento"
-              onClick={(e) => this.deleteElement(detalle._id)}
-            >
-              Borrar evento
-            </button>
+              {buttonEdit}
+            {deleteButton}
           </div>
           <p>
             Nombre del participante: {detalle.asistencia.map((datos) => <Link to={`perfil/${datos._id}`}><div>{datos.nombre}, {datos.edad}</div></Link>)}
@@ -143,7 +146,7 @@ class Evento extends Component {
         <div className="evento-espaciado">
           {allOcio}
           <div className="posicion-boton-añadir">
-            <Link to="/evento/create" style={{ textDecoration: "none" }}>
+            <Link to={`/evento/create/${this.props.user._id}`} style={{ textDecoration: "none" }}>
               <h1 className="title-evento-añadir">Añadir Evento</h1>
             </Link>
           </div>

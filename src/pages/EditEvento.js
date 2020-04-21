@@ -43,7 +43,6 @@ class EditEvento extends Component {
 
   render() {
     const { nombre, descripcion, lugar } = this.state;
-    const id = this.state.info;
     return (
       <div>
         <form onSubmit={this.handleFormSubmit} className="edit-form">

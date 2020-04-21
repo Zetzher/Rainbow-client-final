@@ -28,9 +28,11 @@ class Evento {
             .then((data) => (data))
             .catch((err) => console.log("error from evento:", err));
     }
-    createEvento({ nombre, descripcion, lugar }) {
+
+    createEvento({ id, nombre, descripcion, lugar }) {
+        const userId = id.id
         return this.evento
-            .post("/eventos/create", { nombre, descripcion, lugar })
+            .post(`/eventos/create/${userId}`, { nombre, descripcion, lugar })
             .then((data) => (data))
             .catch
     }

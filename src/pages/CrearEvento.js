@@ -28,15 +28,15 @@ class CrearEvento extends Component {
 
   handleFormSubmit = async (event) => {
     event.preventDefault();
+    const id = this.props.match.params
     const { nombre, lugar, descripcion } = this.state;
-    eventoservice.createEvento({ nombre, lugar, descripcion });
+    eventoservice.createEvento({ id, nombre, lugar, descripcion });
     await this.getInfo();
     this.props.history.push("/evento");
   };
 
   render() {
     const { nombre, descripcion, lugar } = this.state;
-
     return (
       <>
         <Navbar />

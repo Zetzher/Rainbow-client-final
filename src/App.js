@@ -29,7 +29,7 @@ class App extends Component {
                 <PrivateRoute exact path='/perfil/:id' component={PerfilStrangerDetailed} />
                 <PrivateRoute exact path='/evento' component={Evento} />
                 <PrivateRoute exact path='/evento/edit/:id' component={EditEvento} />
-                <PrivateRoute exact path='/evento/create' component={EventoCreate} />
+                <PrivateRoute exact path='/evento/create/:id' component={EventoCreate} />
               </Switch>
           </AuthProvider>
         )

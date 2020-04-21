@@ -32,13 +32,12 @@ class Perfil extends Component {
   }
 
   render() {
-    console.log(this.state.infoUser)
     return (
       <>
         <Navbar />
         <div className='background-profile'>
         <div className="profile">
-          <div><img src={this.state.infoUser.photo_url} className="image_photo_url"></img></div>
+          <div><img src={this.state.infoUser.photo_url} className="image_photo_url" alt="imagen_perfil_usuario"></img></div>
           <h2 className="info-profile">Nombre: <h3 className="subinfo-profile">{this.state.infoUser.nombre}</h3></h2>
           <h2 className="info-profile">Apellido: <h3 className="subinfo-profile">{this.state.infoUser.apellido}</h3></h2>
           <h2 className="info-profile">Edad: <h3 className="subinfo-profile">{this.state.infoUser.edad}</h3></h2>

@@ -10,7 +10,7 @@ import registrarse from "../images/registro1.png";
 
 class Homepage extends Component {
   render() {
-    const { user, logout, isLoggedin } = this.props;
+    const { logout, isLoggedin } = this.props;
 
     return (
       <div className="homepage_background">
