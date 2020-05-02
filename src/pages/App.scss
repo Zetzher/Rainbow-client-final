@@ -1,0 +1,749 @@
+@import "variables";
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,
+b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,
+nav,output,ruby,section,summary,time,mark,audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+
+
+
+table {
+    border: {
+        collapse: collapse;
+        spacing: 0;
+    }
+}
+
+.homepage{
+
+    &_background {
+        background: {
+            image: url("./images/background-home.jpg");
+            repeat: no-repeat;
+            size: cover;
+        }
+        & h1 {
+            color: black;
+            font: {
+                size: 40px;
+                family: 'Monoton', cursive;
+            }
+            padding: {
+                top: 80px;
+                bottom: 180px;
+            }
+            margin: {
+                left: 20px;
+            }
+            line: {
+                height: 70px;
+            }
+            text: {
+                align: left;
+            }
+        }
+    }
+
+}
+
+
+.light {
+    color: #f80000;
+
+&-orange {
+    color: #FF8000;
+}
+
+&-green {
+    color: #39ff14;
+}
+
+&-yellow {
+    color: #E8E330;
+}
+
+&-blue {
+    color: #00ECFF;
+}
+
+&-purple {
+    color: #D516FF;
+}
+}
+
+.auth {
+    &-background {
+       background: {
+           image: url('./images/fondo-auth.jpg');
+           size: cover;
+       }
+        height: 100vh;
+         font: {
+            family: $fontToUse;
+        }
+       filter: brightness(150%)
+    }
+    &-form {
+        & h1{
+            margin: {
+                bottom: 50px;
+            }
+            font: {
+                size: 55px;
+                weight: 900;
+            }
+        }
+    }
+    &-input {
+        border: {
+            radius: 20px;
+        }
+    }
+}
+
+.access {
+    &-account{
+        &-button{
+            font: {
+                size: 35px;
+                family: $fontToUse;
+            }
+            border: none {
+                radius: 20px;
+            }
+            margin: {
+                bottom: 40px;
+            }
+            padding: {
+                top: 10px;
+                bottom: 10px;
+                left: 40px;
+                right: 40px;
+            }
+            background: none;
+            color: #EE00C2;
+           
+        }
+    }
+}
+
+.fontfamily {
+    text: {
+        align: center;
+    }
+    padding: {
+        bottom: 90px;
+    }
+}
+
+.edit {
+    &-form {
+        display: flex;
+        flex: {
+            direction: column;
+        }
+        align: {
+            items: center;
+        }
+        font: {
+            family: $fontToUse;
+            size: 25px;
+        }
+        margin: {
+            top: 30px;
+        }
+        background: {
+            image: url("./images/favicon.png");
+            size: 100vw;
+            repeat: no-repeat;
+        }
+        & label {
+            margin: {
+                bottom: 10px;
+                top: 20px;
+            }
+            font: {
+                size: 25px;
+                weight: 900;
+                family: $fontToUse;
+            }
+        }
+        & input {
+            width: 60vw;
+            margin: auto {
+                bottom: 20px;
+            }
+            font: {
+                size: 18px;
+                family: $fontToUse;
+            }
+            text: {
+                align: center;
+            }
+        }
+    }
+    &evento {
+        &-title {
+            font: {
+                size: 30px;
+            }
+            margin: {
+                top: 20px;
+                bottom: 20px;
+            }
+        }
+    }
+    &-profile {
+        font: {
+            family:$fontToUse;
+            size: 20px;
+        }
+        border: {
+            radius: 20px;
+        }
+        padding: {
+            left: 20px;
+            right: 20px;
+        }
+    }
+}
+
+.background {
+    &-profile {
+        text: {
+            align: center;
+        }
+        margin: {
+            top: 40px;
+        }
+    }
+}
+
+.perfil {
+    &-form {
+        display: flex;
+        flex: {
+            direction: column;
+        }
+        align: {
+            items: center;
+        }
+        font: {
+            family: $fontToUse;
+        }
+        margin: {
+            top: 80px;
+        }
+        background: {
+            image: url("./images/favicon.png");
+            repeat: no-repeat;
+            size: 100vw;
+        }
+        & input {
+            width: 60vw;
+            margin: auto {
+                bottom: 20px;
+            }
+            font: {
+                size: 18px;
+                family: $fontToUse;
+            }
+            text: {
+                align: center;
+            }
+            border: {
+                radius: 20px;
+            }
+        }
+        & h1 {
+            margin: {
+                bottom: 50px;
+            }
+            font: {
+                size: 55px;
+                weight: 900;
+            }
+            text: {
+                align: center;
+            }
+            padding: {
+                top: 100px;
+            }
+        }
+        & label {
+            margin: {
+                bottom: 10px;
+                top: 20px;
+            }
+            font: {
+                size: 25px;
+                weight: 900;
+                family: $fontToUse;
+            }
+        }
+    }
+}
+
+.register {
+    &form {
+        & h1 {
+            margin: {
+                bottom: 50px;
+            }
+            font: {
+                size: 55px;
+                weight: 900;
+            }
+            text: {
+                align: center;
+            }
+            padding: {
+                top: 100px;
+            }
+        }
+        display: flex;
+        flex: {
+            direction: column;
+        }
+        align: {
+            items: center;
+        }
+        font: {
+            family: $fontToUse;
+        }
+        margin: {
+            top: 30px;
+        }
+        & input {
+            width: 60vw;
+            margin: auto {
+                bottom: 20px;
+            }
+            font: {
+                size: 18px;
+                family: $fontToUse;
+            }
+            text: {
+                align: center;
+            }
+            border: {
+                radius: 20px;
+            }
+        }
+        & label {
+            margin: {
+            bottom: 10px;
+            top: 20px;
+        }
+        font: {
+            size: 25px;
+            weight: 900;
+            family: $fontToUse;
+        }
+        }
+            }
+            &link {
+                text: {
+                align: center;
+            }
+        }
+    }
+
+    .image {
+        &_photo {
+            &_url {
+                width: 50vw;
+                border: {
+                    radius: 20px;
+                }
+            }
+        }
+    }
+
+    .evento {
+        &-espaciado {
+            margin: {
+                bottom: 150px;
+            }
+            display: flex;
+            flex: {
+                direction: column-reverse;
+            }
+        }
+    }
+
+    .title {
+        &-evento {
+            &-añadir {
+                color: black;
+                font: {
+                    family: $fontToUse;
+                    size: 30px;
+                }
+                margin: {
+                    top: 40px;
+                    bottom: 30px;
+                }
+                text: {
+                    align: center;
+                }
+                border: $borderToUse {
+                    radius: 20px;
+                }
+                width: 30vh;
+            }
+        }
+        &-ocio {
+            font: {
+                size: 25px;
+            }
+            text: {
+                decoration: underline;
+            }
+        }
+    }
+
+    .posicion {
+        &-boton {
+            &-añadir {
+                display: flex;
+                justify: {
+                    content: center
+                }
+            }
+        }
+        &-botones {
+            &-evento {
+                text: {
+                    align: center;
+                }
+                margin: {
+                    bottom: 20px
+                }
+            }
+        }
+    }
+
+    .descripcion {
+        &-evento {
+            height: 100px;
+            width: 240px;
+            border: {
+                radius: 20px;
+            }
+            font: {
+                size: 18px;
+                family: $fontToUse;
+            }
+            margin: {
+                bottom: 20px;
+            }
+        }
+        &-ocio {
+            font: {
+                size: 20px;
+            }
+        }
+    }
+
+
+.profile {
+    margin: {
+        left: 30px;
+        top: 30px;
+    }
+}
+
+.info {
+    &-profile {
+        font: {
+            family: $fontToUse;
+            size: 25px;
+        }
+        line: {
+            height: 40px;
+        }
+    }
+    &-ocio {
+        font: {
+            size: 18px;
+        }
+    }
+    &-evento {
+        font: {
+            size: 20px;
+            family: $fontToUse;
+        }
+        text: {
+            decoration: none;
+        }
+        color: black;
+        border: $borderToUse;
+        margin: none;
+        padding: {
+            top: 20px;
+            bottom: 20px;
+            left: 10px;
+            right: 10px;
+        }
+        line: {
+            height: 25px;
+        }
+        box: {
+            shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.25);
+        }
+    }
+}
+
+   .subinfo {
+       &-profile{
+           font: {
+               family: $fontToUse;
+               size: 20px;
+           }
+           display: inline;
+       }
+   }
+    
+   .button {
+       &-edit {
+           &-profile {
+               margin: {
+                   top: 50px;
+               }
+           }
+       }
+   }
+ 
+    .button {
+        &toprofile {
+            color: black;
+            border: $borderToUse {
+                radius: 20px;
+            }
+            padding: {
+                left: 20px;
+                right: 20px;
+                top: 10px;
+                bottom: 10px;
+                }
+            }
+            &tosubmit {
+                font: {
+                    size: 15px;
+                }
+                border: $borderToUse {
+                        radius: 20px;
+                    }
+                    background: {
+                        color: white;
+                    }
+                
+            }
+            
+    }
+   
+    .navbar {
+        &-button {
+            background: {
+                color: white;
+            }
+            border: none;
+            width: 10vw;
+        }
+        &footer {
+            display: flex;
+            justify: {
+                content: space-evenly;
+            }
+            position: fixed;
+            background: {
+                color: white;
+            }
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            opacity: 0.9;
+            & button {
+                margin: {
+                    bottom: 10px;
+                }
+                border: {
+                    radius: 20px;
+                }
+                font: {
+                    size: 20px;
+                    family: $fontToUse;
+                }
+                margin: {
+                    right: 20px;
+                }
+            }
+        }
+    }
+    
+    .estilo {
+        &-botones {
+            &-evento {
+                font: {
+                    size: 15px;
+                    family: $fontToUse;
+                }
+                border: $borderToUse {
+                    radius: 20px;
+                }
+                background: {
+                    color: white;
+                }
+                margin: 10px;
+            }
+        }
+    }
+    
+   .ocio {
+       margin: {
+           top: 40px;
+           right: 20px;
+           left: 20px;
+       }
+       font: {
+           family: $fontToUse;
+       }
+       text: {
+           align: center;
+       }
+       &-title {
+           margin: {
+               bottom: 20px;
+           }
+           font: {
+               size: 40px;
+               family: $fontToUse;
+           }
+       }
+       &-column {
+           margin: {
+               bottom: 40px;
+           }
+           font: {
+               family: $fontToUse;
+           }
+           &2 {
+               flex: {
+                   wrap: wrap;
+               }
+               font: {
+                   family: $fontToUse;
+               }
+               margin: {
+                   bottom: 120px;
+               }
+           }
+       }
+       &-dbase {
+           border: $borderToUse;
+           margin: {
+               bottom: 80px;
+           }
+           padding: {
+               top: 40px;
+               bottom: 40px;
+               left: 10px;
+               right: 10px;
+           }
+           line: {
+               height: 22px;
+           }
+           box: {
+               shadow: 10px 10px 15px -5px rgba(0, 0, 0, 0.25);
+           }
+       }
+   }
+    
+   .position {
+       &-buttons {
+        display: flex;
+        flex: {
+            direction: column;
+        }  
+        text: {
+            align: center;
+        }
+        line: {
+            height: 45px;
+        }
+        &-navbar {
+            display: flex;
+            flex: {
+                direction: column;
+            }
+            & h5 {
+                font: {
+                    size: 20px;
+                    family: $fontToUse;
+                }
+                text: {
+                    decoration: none;
+                }
+                color: black;
+            }
+        }
+       }
+       
+   }
+
+    .foto {
+        &-filter {
+            width: 80vw;
+        }
+    }
+  
+  .casita {
+      &-navbar {
+          background: {
+              color: white;
+          }
+          padding: 10px;
+          width: 10vw;
+          border: {
+              radius: 20px;
+          }
+      }
+  }
