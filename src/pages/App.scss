@@ -163,13 +163,17 @@ table {
     }
 }
 
-.fontfamily {
+@mixin result($propiedad, $propiedad2) {
     text: {
-        align: center;
+        align: $propiedad;
     }
     padding: {
-        bottom: 90px;
+        bottom: $propiedad2;
     }
+}
+
+.fontfamily  {
+    @include result(center, 90px);
 }
 
 .edit {
